@@ -23,7 +23,12 @@
                 header("location: dashboard.php");
             }
             else{
-                echo "Invalid Username and Password";
+                echo '<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+                        <strong>Wrong Information</strong>Username and Password Invalid
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>';
             }
         }
 ?>
@@ -52,6 +57,7 @@
                     <label for="txtpassword"></label>
                     <input type="password" name="txtpassword" class="form-control" id="txtpassword" placeholder="Password">
                     <button type="submit" class="btn btn-primary mt-2 w-100" name="btnLogin">Login</button>
+                    <a href="index.php" class="btn btn-danger mt-2 w-100"></i>Cancel</a>
                 </form>
             </div>    
          </div>     
