@@ -100,9 +100,9 @@
                             
                     ?>
                     <div class="col-sm-3 my-1 ">
-                        <input class="form-control" type="password" name="txtpassword_current" id="txtpassword_current" placeholder="Current Password">
-                        <input class="form-control" type="password" name="txtpassword_new" id="txtpassword_new" placeholder="New password">
-                        <input class="form-control" type="password" name="txtpassword_confirm" id="txtpassword_new" placeholder="Confirm password">
+                        <input class="form-control" type="password" name="txtpassword_current" id="txtpassword_current" placeholder="Current Password" required>
+                        <input class="form-control" type="password" name="txtpassword_new" id="txtpassword_new" placeholder="New password" required>
+                        <input class="form-control" type="password" name="txtpassword_confirm" id="txtpassword_new" placeholder="Confirm password" required>
                         <button type="submit" class="btn btn-primary mt-2 w-100 " name="btnSave" style="float: right;">Save</button>
                     </div>
                 </form>
