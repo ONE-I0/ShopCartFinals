@@ -59,7 +59,7 @@
                     <a href="dashboard.php"><i class="fa-solid fa-gauge"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="product.php"><i class="fa-solid fa-store"></i> Products</a>
+                    <a href="products.php"><i class="fa-solid fa-store"></i> Products</a>
                 </li>
             </ul>
         </div>

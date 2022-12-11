@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Document</title>
+    <title>Update</title>
 </head>
 <body>
 <div id="throbber" style="display:none; min-height:120px;"></div>
@@ -59,7 +59,7 @@
                     <a href="dashboard.php"><i class="fa-solid fa-gauge"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="product.php"><i class="fa-solid fa-store"></i> Products</a>
+                    <a href="products.php"><i class="fa-solid fa-store"></i> Products</a>
                 </li>
             </ul>
         </div>
@@ -68,18 +68,34 @@
 
     <div id="page-wrapper">
         <div class="container-fluid">
-            <!-- Page Heading -->
-            <div class="row" id="main" >
-                <div class="col-sm-12 col-md-12 well" id="content">
-                    <h1>Welcome <?php echo $name; ?> !</h1>
-                </div>
-            </div>
-            <!-- /.row -->
+
+        <?php 
+
+            if(isset($_GET['k'])){
+                $_SESSION['k'] = $_GET['k'];
+            }
+            if(isset($_POST['btnDelete'])){
+                require('open-connection.php');
+                    $strsql = "DELETE FROM products_table WHERE id = " . $_SESSION['k'];
+                    if(mysqli_query($con,$strsql)){
+                        header("location: products.php");
+                    }
+                    require('close-connection.php');
+            }
+        ?>
+
+        <div class="row" id ="main">
+            <form method="post">
+                <h1>Are you sure you want to delete?</h1>
+                <button type="submit" name="btnDelete" class="btn btn-danger">Delete</button>
+                <a href="products.php" class="btn btn-primary">Cancel</a>
+            </form>
+
         </div>
-        <!-- /.container-fluid -->
+        </div>
+
     </div>
-    <!-- /#page-wrapper -->
-</div><!-- /#wrapper -->
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
