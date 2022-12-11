@@ -72,7 +72,12 @@
             <div class="row" id="main" >
                 <div class="col-sm-12 col-md-12 well" id="content">
                     <h1>Welcome <?php echo $name; ?> !</h1>
-                    <h2>Total</h2>
+                    <h2>Total Product</h2>
+                    <button class="btn btn-primary" type="button">
+                        <?php 
+                            echo (isset($_SESSION['totalQuantity']) ? $_SESSION['totalQuantity'] : "0"); 
+                        ?>
+                    </button>
                 </div>
             </div>
             <!-- /.row -->
